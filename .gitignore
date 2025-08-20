@@ -1,0 +1,40 @@
+# SOs
+.DS_Store
+Thumbs.db
+
+# Editores/IDE
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs e temporários
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+*.tmp
+*.temp
+
+# Cache
+.cache/
+dist/
+build/
+out/
+
+# Ambientes virtuais (se usar Python para servir)
+.venv/
+env/
+venv/
+
+# Arquivos de sistema
+._*
+.Spotlight-V100
+.Trashes
+
+# Node (caso adicione ferramentas no futuro)
+node_modules/
+
+# Arquivos de deploy locais
+netlify.toml.local
+vercel.json.local
