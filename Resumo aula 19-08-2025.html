@@ -1,0 +1,629 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta name="x-poe-datastore-behavior" content="local_only"><meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://code.jquery.com https://unpkg.com https://d3js.org https://threejs.org https://cdn.plot.ly https://stackpath.bootstrapcdn.com https://maps.googleapis.com https://cdn.tailwindcss.com https://ajax.googleapis.com https://kit.fontawesome.com https://cdn.datatables.net https://maxcdn.bootstrapcdn.com https://code.highcharts.com https://tako-static-assets-production.s3.amazonaws.com https://www.youtube.com https://fonts.googleapis.com https://fonts.gstatic.com https://pfst.cf2.poecdn.net https://puc.poecdn.net https://i.imgur.com https://wikimedia.org https://*.icons8.com https://*.giphy.com https://picsum.photos https://images.unsplash.com; frame-src 'self' https://www.youtube.com https://trytako.com; child-src 'self'; manifest-src 'self'; worker-src 'self'; upgrade-insecure-requests; block-all-mixed-content;">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Educação Infantil – Apresentação de Estudos (Resumos Detalhados)</title>
+  <style>
+    :root{
+      --bg:#0e0f13;
+      --panel:#151822;
+      --ink:#e9eef5;
+      --muted:#a9b3c1;
+      --accent:#63b3ff;
+      --accent2:#a8ff9e;
+      --accent3:#ffd36f;
+      --accent4:#ff9bd1;
+      --warn:#ffc857;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji","Segoe UI Emoji";
+      background: radial-gradient(1200px 600px at 80% -10%, #1a2030 0%, var(--bg) 60%) fixed;
+      color:var(--ink);
+      line-height:1.45;
+    }
+    header{
+      position:sticky;top:0;z-index:60;
+      background:linear-gradient(180deg, rgba(14,15,19,0.95), rgba(14,15,19,0.7) 70%, rgba(14,15,19,0));
+      backdrop-filter: blur(8px) saturate(120%);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+    }
+    .wrap{max-width:1200px;margin:0 auto;padding:clamp(14px,2vw,18px) clamp(14px,3.4vw,28px)}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:40px;height:40px;border-radius:12px;background:conic-gradient(from 210deg, var(--accent), var(--accent3), var(--accent4), var(--accent2), var(--accent));box-shadow:0 0 0 2px rgba(255,255,255,0.06) inset, 0 10px 24px rgba(99,179,255,0.3)}
+    h1{margin:0;font-size:clamp(18px,3.2vw,28px)}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+    button{
+      appearance:none;border:1px solid rgba(255,255,255,0.12);background:#182032;color:var(--ink);
+      padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:600
+    }
+    button.primary{border-color:transparent;background:linear-gradient(180deg,#2b8cff,#1e6fe0);box-shadow:0 10px 18px rgba(43,140,255,0.35)}
+    button:hover{filter:brightness(1.05)}
+    main{max-width:1200px;margin:0 auto;padding: clamp(14px,3.5vw,28px)}
+    .slide{
+      display:none;
+      background:linear-gradient(180deg, rgba(29,34,48,0.92), rgba(22,26,38,0.92));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:16px;
+      padding:clamp(14px,3vw,24px);
+      margin:14px 0;
+      box-shadow:0 24px 60px rgba(0,0,0,0.35), inset 0 0 120px rgba(255,255,255,0.03);
+    }
+    .slide.active{display:block}
+    .slide-header{
+      display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:12px
+    }
+    .slide h2{margin:0;font-size:clamp(18px,3vw,26px)}
+    .meta{display:flex;gap:8px;flex-wrap:wrap}
+    .chip{
+      font-size:12px;font-weight:800;letter-spacing:0.2px;color:#0b1220;
+      background:var(--accent3);padding:4px 10px;border-radius:999px
+    }
+    .chip.alt{background:var(--accent)}
+    .chip.ok{background:var(--accent2)}
+    .chip.pink{background:var(--accent4)}
+    .content{
+      display:grid;gap:14px;grid-template-columns:1fr 1fr;
+    }
+    @media (max-width: 900px){
+      .content{grid-template-columns:1fr}
+    }
+    .panel{
+      background:linear-gradient(180deg, rgba(24,30,44,0.9), rgba(18,22,34,0.9));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:12px;padding:12px
+    }
+    .panel h3{margin:0 0 8px;font-size:clamp(15px,2.4vw,18px)}
+    .panel h4{margin:8px 0 6px;font-size:clamp(14px,2.2vw,16px)}
+    .k{
+      color:var(--ink);background:#1f2636;border-left:3px solid var(--accent);
+      padding:8px 10px;border-radius:8px;margin:8px 0
+    }
+    .list{margin:6px 0 0 0;padding-left:18px}
+    .list li{margin:4px 0}
+    .two-col{columns:2;column-gap:18px}
+    @media (max-width:720px){.two-col{columns:1}}
+    .quote{
+      margin:8px 0;padding:10px 12px;border-left:4px solid var(--warn);
+      background:rgba(255,200,87,0.08);color:#ffe9b3;border-radius:8px
+    }
+    .note{color:var(--muted);font-size:13px}
+    .badge{
+      display:inline-block;padding:4px 8px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);
+      color:var(--muted);font-size:12px;margin:4px 6px 0 0
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:10px
+    }
+    .progress{color:var(--muted);font-weight:700}
+    .footer{
+      margin-top:10px;color:var(--muted);font-size:12px;text-align:center
+    }
+    .hl{color:#fff;background:linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0));padding:1px 4px;border-radius:6px}
+
+    /* Modal (Sumário) */
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(0,0,0,0.55);
+      display:none;align-items:center;justify-content:center;z-index:100;
+      backdrop-filter:saturate(120%) blur(2px);
+    }
+    .modal-backdrop.show{display:flex}
+    .modal{
+      width:min(720px, 92vw);
+      max-height:80vh;overflow:auto;
+      background:#111827;border:1px solid rgba(255,255,255,0.12);
+      border-radius:14px;box-shadow:0 20px 80px rgba(0,0,0,0.6);
+      padding:16px;
+    }
+    .modal h3{margin:0 0 10px;font-size:18px}
+    .modal .close{
+      float:right;appearance:none;border:0;background:#1f2937;color:#eaeef5;
+      border-radius:8px;padding:6px 10px;cursor:pointer
+    }
+    .toc-list{margin:8px 0 0 0;padding-left:18px}
+    .toc-list li{margin:6px 0}
+    .toc-link{
+      color:#cfe4ff;text-decoration:none;border-bottom:1px dashed rgba(207,228,255,0.4)
+    }
+    .toc-link:hover{color:#fff}
+
+    /* Estilos de impressão desta página (ajuda se o ambiente permitir Ctrl/Cmd+P manual) */
+    @media print{
+      header, .toolbar, .nav, .footer, .modal-backdrop{display:none !important}
+      body{background:#fff;color:#111}
+      .slide{display:block !important;box-shadow:none;background:#fff;border:0;margin:0 0 16px 0;border-radius:0}
+      .panel{background:#fff;border:1px solid #ddd}
+      .quote{color:#444;background:#fff1c7;border-color:#e6b646}
+      .k{background:#f6f7fb;border-left-color:#2b8cff;color:#222}
+    }
+  </style>
+<script src="https://puc.poecdn.net/authenticated_preview_page/syncedState.bd4eeeb8e8e02052ee92.js"></script></head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>Educação Infantil – Resumos Detalhados e Revisão Rápida</h1>
+          <div class="note">Baseado nos PDFs: “História da infância: reflexões...” (Rita Cássia L. da Rocha) e “Um resgate histórico da infância” (Aula 2, 19/08).</div>
+        </div>
+      </div>
+      <div class="toolbar">
+        <button id="prev">◀ Anterior</button>
+        <button class="primary" id="next">Próximo ▶</button>
+        <button id="toc" aria-haspopup="dialog" aria-controls="tocModal">Sumário</button>
+        <button id="exportPdf">Baixar PDF (experimental)</button>
+        <span id="progress" class="progress" aria-live="polite"></span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Slides (mesmo conteúdo anterior) -->
+    <section class="slide active" data-title="Panorama e objetivos" id="s1" tabindex="-1">
+      <div class="slide-header">
+        <h2>Panorama e objetivos</h2>
+        <div class="meta">
+          <span class="chip alt">Aula 19/08</span>
+          <span class="chip">Revisão rápida</span>
+          <span class="chip ok">Datas e nomes</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>O que você vai revisar</h3>
+          <ul class="list">
+            <li>Principais teses de Philippe Ariès e contrapontos (Kuhlmann Jr., Gélis, Alexandre-Bidón, Riché).</li>
+            <li>Marcos históricos: sécs. XII–XVII (fontes), XIV (criança mística), XVII (sentimento da infância), XVIII–XIX (instituições), contemporaneidade.</li>
+            <li>Dinâmicas e análises da Aula 2 (Ivan Cruz; Beechey, 1793; documentário).</li>
+          </ul>
+          <div class="k">Foco: manter datas, nomes e trechos-chave sem perder nuances.</div>
+        </div>
+        <div class="panel">
+          <h3>Como usar</h3>
+          <ul class="list">
+            <li>Passe os slides com “Anterior/Próximo” ou setas do teclado.</li>
+            <li>Use “Baixar PDF (experimental)” para abrir versão de impressão em nova aba.</li>
+            <li>Procure caixas “Citações-chave” para memorização rápida.</li>
+          </ul>
+          <div class="badge">Autores</div>
+          <div class="badge">Obras</div>
+          <div class="badge">Datas</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Ariès – Tese e contexto" id="s2" tabindex="-1">
+      <div class="slide-header">
+        <h2>Philippe Ariès – Tese e contexto</h2>
+        <div class="meta">
+          <span class="chip">1960 (FR)</span>
+          <span class="chip">1981 (BR)</span>
+          <span class="chip">Séculos XII–XVII</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Tese central</h3>
+          <ul class="list">
+            <li>A noção/sentimento de infância é <span class="hl">construção histórica</span>, emergindo no <strong>séc. XVII</strong> (transição à modernidade).</li>
+            <li>Antes: criança vista como “<strong>adulto em miniatura</strong>”.</li>
+            <li><strong>Mortalidade</strong> e <strong>infanticídio</strong> elevados; trabalho por volta dos <strong>7 anos</strong>.</li>
+            <li>Família “social” (não sentimental); <strong>amor materno</strong> como construção.</li>
+          </ul>
+          <div class="quote">“A criança, por muito tempo, não foi vista como um ser em desenvolvimento... e sim como um adulto em miniatura.”</div>
+        </div>
+        <div class="panel">
+          <h3>Fontes e conceitos</h3>
+          <ul class="list">
+            <li><strong>História das mentalidades</strong> (Annales) – <em>Burke, 1997</em>.</li>
+            <li>Iconografia; diários; cartas; dossiês; batismos; lápides.</li>
+            <li><em>Infans</em> = “não falante”; infância e <strong>falta de fala/razão</strong> (Platão, Agostinho, Descartes).</li>
+            <li><strong>Séc. XIV</strong>: criança mística/anjos (Menino Jesus, Virgem Maria) – <em>Oliveira, 1999</em>.</li>
+          </ul>
+          <div class="k"><strong>Paparicação</strong> → <strong>Apego</strong> (disciplina/separação) como dupla virada moderna.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Modernidade: família e escola" id="s3" tabindex="-1">
+      <div class="slide-header">
+        <h2>Modernidade: família nuclear e escola</h2>
+        <div class="meta">
+          <span class="chip">Séculos XVII–XVIII</span>
+          <span class="chip ok">Instituições</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Transformações</h3>
+          <ul class="list">
+            <li><strong>Família nuclear</strong> (padrão patriarcal) e proximidade pais-filhos.</li>
+            <li><strong>Escolas</strong> específicas, método e moral voltados à infância.</li>
+            <li><strong>Montaigne</strong> (séc. XVI): crítica aos excessos de ternura pública.</li>
+          </ul>
+          <div class="quote">“Instituições especiais, adaptadas à infância, ganham importância moral e social.” (síntese de Ariès)</div>
+        </div>
+        <div class="panel">
+          <h3>Palavras-chave</h3>
+          <div class="two-col">
+            <div class="k"><strong>Paparicação</strong>: encanto/ingenuidade exibidos socialmente.</div>
+            <div class="k"><strong>Apego</strong>: disciplina, separação geracional, educação de costumes.</div>
+            <div class="k"><strong>Higiene e saúde</strong>: resposta à mortalidade infantil.</div>
+            <div class="k"><strong>Cristianização</strong> dos costumes e valorização da alma infantil.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Críticas a Ariès" id="s4" tabindex="-1">
+      <div class="slide-header">
+        <h2>Críticas a Ariès</h2>
+        <div class="meta">
+          <span class="chip">Kuhlmann Jr. (1998)</span>
+          <span class="chip">Gélis (1991)</span>
+          <span class="chip">Alexandre-Bidón &amp; Riché</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Kuhlmann Jr. (1998)</h3>
+          <ul class="list">
+            <li><strong>Vieses de fonte</strong>: elites; invisibiliza classes populares.</li>
+            <li><strong>Especificidade da infância</strong> antes do séc. XVII (brinquedos, roupas, móveis, práticas).</li>
+            <li><strong>Duas infâncias</strong>: rica (particularização, etiqueta, artes) vs. pobre (convivência, espaços públicos).</li>
+          </ul>
+          <div class="quote">“O sentimento de infância não seria inexistente na Antiguidade ou Idade Média.” (Kuhlmann Jr., 1998, p. 22)</div>
+        </div>
+        <div class="panel">
+          <h3>Gélis; Alexandre-Bidón; Riché</h3>
+          <ul class="list">
+            <li><strong>Gélis (1991)</strong>: criança “<strong>pública</strong>”, parte da linhagem; <strong>primeira educação pelos pais</strong>; “indiferença medieval é <em>fábula</em>”.</li>
+            <li><strong>Alexandre-Bidón &amp; Riché</strong>: materialidade medieval (objetos/brinquedos/roupas); socialização e religiosidade infantis.</li>
+            <li><strong>Registros populares</strong>: aparecem em documentos de atendimento a pobres e trabalhadores.</li>
+          </ul>
+          <div class="k">Há <strong>continuidades</strong> de cuidado antes do séc. XVII, variando por <strong>classe</strong> e contexto.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Atualidade: múltiplas infâncias" id="s5" tabindex="-1">
+      <div class="slide-header">
+        <h2>Atualidade: múltiplas infâncias e sujeito histórico</h2>
+        <div class="meta">
+          <span class="chip ok">Sujeito de direitos</span>
+          <span class="chip pink">Desigualdades</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Múltiplas infâncias</h3>
+          <ul class="list">
+            <li>Pobreza, trabalho infantil, violência, exploração midiática/sexual.</li>
+            <li>Hiperproteção em “castelos-condomínios”.</li>
+            <li>Considerar a <strong>criança concreta</strong> como <strong>sujeito histórico</strong> com voz e direitos.</li>
+          </ul>
+          <div class="quote">“Pensar a criança na história significa considerá-la como sujeito histórico.” (Kuhlmann Jr., 1998, p. 33)</div>
+        </div>
+        <div class="panel">
+          <h3>Trechos-chave</h3>
+          <div class="two-col">
+            <div class="k">“Adulto em miniatura” (Ariès) – visão pré-moderna.</div>
+            <div class="k">“Indiferença medieval é fábula” (Gélis) – crítica central.</div>
+            <div class="k">“Paparicação → Apego” (Ariès) – virada afetivo-disciplinar.</div>
+            <div class="k">“Duas infâncias” (Kuhlmann Jr.) – classe como chave.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Resgate histórico da infância – Aula 19/08" id="s6" tabindex="-1">
+      <div class="slide-header">
+        <h2>“Um resgate histórico da infância” – Aula 19/08</h2>
+        <div class="meta">
+          <span class="chip">Profa. Renata Araujo</span>
+          <span class="chip">Leitura de imagens</span>
+          <span class="chip">Documentário</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Dinâmicas e fontes</h3>
+          <ul class="list">
+            <li>Escrita autobiográfica (frases-gatilho).</li>
+            <li>Iconografia: <strong>Ivan Cruz</strong> (s/d) e <strong>Beechey</strong> (1793).</li>
+            <li>Documentário: “Ser criança não significa ter infância – A invenção da infância”.</li>
+          </ul>
+          <div class="k"><strong>Franco Frabboni</strong>: três fases da infância (relacione com Ariès e críticas).</div>
+        </div>
+        <div class="panel">
+          <h3>Atividades</h3>
+          <ul class="list">
+            <li><strong>Linha do tempo</strong> das concepções.</li>
+            <li><strong>Entrevistas</strong> com pais/avós.</li>
+            <li><strong>Leitura</strong> do artigo para debate (26/08).</li>
+          </ul>
+          <div class="quote">Pergunta norteadora: “A infância de hoje é a mesma de outros tempos?”</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Estrutura da Educação Básica (LDB/BNCC)" id="s7" tabindex="-1">
+      <div class="slide-header">
+        <h2>Estrutura da Educação Básica no Brasil</h2>
+        <div class="meta">
+          <span class="chip ok">LDB 9.394/1996</span>
+          <span class="chip">BNCC</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Educação Infantil</h3>
+          <ul class="list">
+            <li>0–5 anos e 11 meses; <strong>Creche</strong> (0–3) e <strong>Pré-escola</strong> (4–5, obrigatória).</li>
+            <li>Direitos (BNCC): conviver, brincar, participar, explorar, expressar, conhecer-se.</li>
+            <li>Campos de experiências; avaliação sem retenção.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Ensino Fundamental e Médio</h3>
+          <h4>Ensino Fundamental (9 anos, 6–14)</h4>
+          <ul class="list">
+            <li>Anos iniciais (1º–5º) e finais (6º–9º).</li>
+            <li>Áreas: Linguagens; Matemática; Ciências da Natureza; Ciências Humanas; Ensino Religioso (sistemas).</li>
+          </ul>
+          <h4>Ensino Médio (3 anos)</h4>
+          <ul class="list">
+            <li>Formação Geral Básica + Itinerários Formativos (áreas e/ou formação técnica e profissional).</li>
+            <li>Carga horária mínima conforme normativas vigentes.</li>
+          </ul>
+          <div class="k">Reconhece etapas e direitos específicos — contraponto à “criança miniadulta”.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Linha do tempo – marcos e nomes" id="s8" tabindex="-1">
+      <div class="slide-header">
+        <h2>Linha do tempo – marcos e nomes</h2>
+        <div class="meta">
+          <span class="chip">Memorize datas</span>
+          <span class="chip ok">Anki-friendly</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Marcos</h3>
+          <ul class="list">
+            <li><strong>Antiguidade–Medieval</strong>: “adulto em miniatura”; trabalho ~<strong>7 anos</strong>; mortalidade/infanticídio.</li>
+            <li><strong>Séc. XIV</strong>: criança mística/anjos.</li>
+            <li><strong>Séc. XVI</strong>: <strong>Montaigne</strong> critica paparicação.</li>
+            <li><strong>Séc. XVII</strong>: sentimento de infância (Ariès); família nuclear; escolas; “Paparicação → Apego”.</li>
+            <li><strong>Sécs. XVIII–XIX</strong>: consolidação institucional e discursos médicos/pedagógicos/jurídicos.</li>
+            <li><strong>Séc. XX–XXI</strong>: direitos, expansão escolar; BNCC; múltiplas infâncias.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Nomes e obras</h3>
+          <ul class="list">
+            <li><strong>Philippe Ariès</strong> – História social da criança e da família (1960; BR 1981).</li>
+            <li><strong>Moysés Kuhlmann Jr.</strong> – Infância e educação infantil (1998).</li>
+            <li><strong>Jacques Gélis</strong> – História da vida privada (1991).</li>
+            <li><strong>Daniele Alexandre-Bidón</strong>; <strong>Pierre Riché</strong> – iconografias e objetos.</li>
+            <li><strong>Peter Burke</strong> – A Escola dos Annales (1997).</li>
+            <li><strong>William Beechey</strong> (1793); <strong>Ivan Cruz</strong> (s/d).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Citações-chave" id="s9" tabindex="-1">
+      <div class="slide-header">
+        <h2>Citações-chave para decorar</h2>
+        <div class="meta">
+          <span class="chip">Memória</span>
+          <span class="chip pink">Trechos</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Ariès</h3>
+        <div class="quote">“A criança, por muito tempo, não foi vista como um ser em desenvolvimento... e sim como um adulto em miniatura.”</div>
+          <div class="quote">“Paparicação → Apego”: ternura pela graça infantil seguida de disciplina e separação para educar.</div>
+        </div>
+        <div class="panel">
+          <h3>Críticos</h3>
+          <div class="quote">Kuhlmann Jr. (1998, p. 22): “O sentimento de infância não seria inexistente em tempos antigos ou na Idade Média...”</div>
+          <div class="quote">Gélis (1991, apud Kuhlmann Jr., p. 23): “A indiferença medieval pela criança é uma fábula.”</div>
+          <div class="quote">Síntese: “Duas infâncias” – rica vs. pobre – e materialidade infantil já na Idade Média.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="Checklist e conexões" id="s10" tabindex="-1">
+      <div class="slide-header">
+        <h2>Checklist de estudo e conexões</h2>
+        <div class="meta">
+          <span class="chip ok">Pronto para debate</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="panel">
+          <h3>Checklist</h3>
+          <ul class="list">
+            <li>Explica Ariès e “paparicação/apego”?</li>
+            <li>Marca <strong>séc. XVII</strong> e diferencia <strong>séc. XIV</strong>?</li>
+            <li>Aponta críticas de <strong>Kuhlmann Jr.</strong> e <strong>Gélis</strong>?</li>
+            <li>Lembra <strong>Alexandre-Bidón</strong> e <strong>Riché</strong>?</li>
+            <li>Relaciona <strong>BNCC/LDB</strong> às etapas da Educação Básica?</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Aplicações didáticas</h3>
+          <ul class="list">
+            <li>Leitura de imagens como documento histórico.</li>
+            <li>Entrevistas intergeracionais.</li>
+            <li>Documentação pedagógica na EI.</li>
+          </ul>
+          <div class="badge">Iconografia</div>
+          <div class="badge">Memória</div>
+          <div class="badge">Direitos</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="nav">
+      <div class="toolbar">
+        <button id="prev2">◀ Anterior</button>
+        <button class="primary" id="next2">Próximo ▶</button>
+      </div>
+      <div class="progress" id="progress2" aria-live="polite"></div>
+    </div>
+
+    <div class="footer">
+      Dica: use as setas ← → para navegar. Para gerar PDF, clique em “Baixar PDF (experimental)”, depois use Ctrl/Cmd+P na nova aba.
+    </div>
+  </main>
+
+  <!-- Modal Sumário -->
+  <div class="modal-backdrop" id="tocBackdrop" role="dialog" aria-modal="true" aria-labelledby="tocTitle">
+    <div class="modal" role="document">
+      <button class="close" id="tocClose" aria-label="Fechar Sumário">Fechar ✕</button>
+      <h3 id="tocTitle">Sumário</h3>
+      <ol class="toc-list">
+        <li><a class="toc-link" href="#s1">1) Panorama e objetivos</a></li>
+        <li><a class="toc-link" href="#s2">2) Ariès – Tese e contexto</a></li>
+        <li><a class="toc-link" href="#s3">3) Modernidade: família e escola</a></li>
+        <li><a class="toc-link" href="#s4">4) Críticas: Kuhlmann Jr., Gélis, Alexandre-Bidón, Riché</a></li>
+        <li><a class="toc-link" href="#s5">5) Atualidade: múltiplas infâncias</a></li>
+        <li><a class="toc-link" href="#s6">6) Aula 19/08 – Resgate histórico</a></li>
+        <li><a class="toc-link" href="#s7">7) Estrutura da Educação Básica (LDB/BNCC)</a></li>
+        <li><a class="toc-link" href="#s8">8) Linha do tempo – marcos e nomes</a></li>
+        <li><a class="toc-link" href="#s9">9) Citações-chave</a></li>
+        <li><a class="toc-link" href="#s10">10) Checklist e conexões</a></li>
+      </ol>
+    </div>
+  </div>
+
+  <script>
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let idx = 0;
+
+    function show(i){
+      idx = Math.max(0, Math.min(slides.length-1, i));
+      slides.forEach((s, k)=> s.classList.toggle('active', k===idx));
+      const title = slides[idx].dataset.title || '';
+      document.getElementById('progress').textContent = `Slide ${idx+1}/${slides.length} – ${title}`;
+      document.getElementById('progress2').textContent = `Slide ${idx+1}/${slides.length} – ${title}`;
+      window.location.hash = `#${slides[idx].id}`;
+      slides[idx].focus({preventScroll:false});
+    }
+
+    function byHash(){
+      const hash = window.location.hash.replace('#','');
+      if(!hash) return;
+      const target = slides.findIndex(s=> s.id === hash);
+      if(target >= 0) show(target);
+    }
+
+    const prev = ()=> show(idx-1);
+    const next = ()=> show(idx+1);
+
+    document.getElementById('prev').addEventListener('click', prev);
+    document.getElementById('next').addEventListener('click', next);
+    document.getElementById('prev2').addEventListener('click', prev);
+    document.getElementById('next2').addEventListener('click', next);
+
+    document.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') next();
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') prev();
+      if (e.key.toLowerCase() === 't') openToc();
+      if (e.key === 'Escape') closeToc();
+    });
+
+    window.addEventListener('hashchange', byHash);
+    byHash();
+    show(0);
+
+    // Modal Sumário
+    const tocBtn = document.getElementById('toc');
+    const backdrop = document.getElementById('tocBackdrop');
+    const closeBtn = document.getElementById('tocClose');
+
+    function openToc(){
+      backdrop.classList.add('show');
+      closeBtn.focus();
+    }
+    function closeToc(){
+      backdrop.classList.remove('show');
+      tocBtn.focus();
+    }
+
+    tocBtn.addEventListener('click', openToc);
+    closeBtn.addEventListener('click', closeToc);
+    backdrop.addEventListener('click', (e)=>{
+      if(e.target === backdrop) closeToc();
+    });
+    document.querySelectorAll('.toc-link').forEach(link=>{
+      link.addEventListener('click', ()=>{
+        setTimeout(closeToc, 50);
+      });
+    });
+
+    // Exportar versão print-friendly em nova aba (sem usar window.print)
+    document.getElementById('exportPdf').addEventListener('click', ()=>{
+      const win = window.open('', '_blank');
+      if(!win) return; // pop-up bloqueado
+      const doc = win.document;
+      const title = document.title;
+      // Coletar conteúdo dos slides ativos em uma página única
+      const slidesHtml = slides.map(s => {
+        const clone = s.cloneNode(true);
+        clone.classList.add('active');
+        return clone.outerHTML;
+      }).join('\n');
+
+      doc.open();
+      doc.write(`<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>${title} – Versão para impressão</title>
+<style>
+  body{font-family:Inter, Arial, sans-serif; color:#111; margin:0; padding:24px; line-height:1.4}
+  h1{margin:0 0 16px}
+  .info{color:#444;margin:6px 0 14px}
+  .slide{page-break-inside:avoid; margin:0 0 18px 0; padding:14px; border:1px solid #ddd; border-radius:8px; background:#fff}
+  .slide-header{display:flex;justify-content:space-between;gap:8px;margin-bottom:8px}
+  .slide h2{margin:0 0 6px;font-size:20px}
+  .meta{display:flex;gap:6px;flex-wrap:wrap}
+  .chip{font-size:11px;padding:2px 8px;border-radius:999px;background:#eef5ff;border:1px solid #cfe1ff;color:#0b3a75}
+  .content{display:block}
+  .panel{border:1px solid #e7e7e7;border-radius:8px;padding:10px;margin:8px 0;background:#fafafa}
+  .panel h3{margin:0 0 6px;font-size:16px}
+  .panel h4{margin:6px 0 4px;font-size:14px}
+  .list{margin:6px 0 0 0;padding-left:18px}
+  .list li{margin:4px 0}
+  .quote{margin:8px 0;padding:8px 10px;border-left:4px solid #f2c14e;background:#fff7db;color:#6b560f;border-radius:6px}
+  .k{margin:6px 0;padding:8px 10px;border-left:3px solid #2b8cff;background:#f3f6ff;border-radius:6px}
+  @page{margin:16mm}
+  @media print{
+    .noprint{display:none}
+    .slide{page-break-after:always}
+  }
+</style>
+</head>
+<body>
+  <h1>${title} – Versão para impressão</h1>
+  <div class="info noprint">Dica: use Ctrl/Cmd+P para salvar em PDF. Esta versão evita o uso de window.print.</div>
+  ${slidesHtml}
+</body>
+</html>`);
+      doc.close();
+      // Não chama win.print(); o usuário usará Ctrl/Cmd+P manualmente.
+    });
+  </script>
+
+
+</body></html>
