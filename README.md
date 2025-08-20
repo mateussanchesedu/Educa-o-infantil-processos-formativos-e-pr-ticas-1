@@ -11,7 +11,10 @@ Inclui:
 
 ## Visualização
 
-Após o deploy (GitHub Pages/Netlify/Vercel), acesse a URL gerada. Se estiver rodando localmente, abra `index.html` no navegador.
+Acesse a apresentação publicada:
+- URL: https://SEU_USUARIO.github.io/infancia-apresentacao
+
+Se estiver rodando localmente, abra `index.html` no navegador.
 
 ## Recursos da apresentação
 
@@ -30,7 +33,7 @@ Após o deploy (GitHub Pages/Netlify/Vercel), acesse a URL gerada. Se estiver ro
 - `LICENSE`: licença do projeto (MIT).
 - `.gitignore`: ignora arquivos comuns de editor/OS e artefatos locais.
 
-## Como publicar
+## Como publicar (caso você faça um fork)
 
 ### GitHub Pages
 1. Crie um repositório público (ex.: `infancia-apresentacao`).
